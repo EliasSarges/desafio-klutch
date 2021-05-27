@@ -2,10 +2,15 @@ import React from "react";
 import { View, Text } from "react-native";
 import { Container } from "./styles";
 
+import Header from "../../components/Header";
+
 export default function Produtos() {
   return (
-    <Container>
-      <Text>Produtos</Text>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <Text>Produtos</Text>
+      </Container>
+    </>
   );
 }
