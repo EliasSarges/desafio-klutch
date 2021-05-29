@@ -15,8 +15,6 @@ export const CarouselHeader = styled.View`
   align-items: center;
 
   elevation: 0.8;
-
-  padding: 0 15px;
 `;
 
 export const CarouselBody = styled.ScrollView`
