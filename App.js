@@ -1,6 +1,6 @@
 import React from "react";
-import Produtos from "./src/screens/Produtos";
+import Products from "./src/screens/Products";
 
 export default function App() {
-  return <Produtos></Produtos>;
+  return <Products></Products>;
 }
