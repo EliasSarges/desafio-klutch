@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { TouchableOpacity, StyleSheet } from "react-native";
 
 export const Container = styled.TouchableOpacity`
-  width: 100%;
+  width: 90%;
   height: 50px;
 
   flex-direction: row;

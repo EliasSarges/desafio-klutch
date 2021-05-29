@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 export const Container = styled.View`
   height: 400px;
   width: 100%;
+  padding-horizontal: 15px;
 `;
 
 export const CarouselHeader = styled.View`
@@ -14,7 +15,7 @@ export const CarouselHeader = styled.View`
   justify-content: space-between;
   align-items: center;
 
-  elevation: 0.8;
+  margin-top: 15px;
 `;
 
 export const CarouselBody = styled.ScrollView`
