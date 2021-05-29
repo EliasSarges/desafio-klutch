@@ -1,15 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { Container } from "./styles";
+import { Container, Title, styles } from "./styles";
 
 import Header from "../../components/Header";
+
+import Carousel from "../../components/Carousel";
 
 export default function Produtos() {
   return (
     <>
       <Header />
       <Container>
-        <Text>Produtos</Text>
+        <Carousel title="Ofertas" />
       </Container>
     </>
   );
