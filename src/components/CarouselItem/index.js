@@ -1,8 +1,10 @@
 import React from "react";
 import { View, TouchableOpacity, Image, Text } from "react-native";
-import { Container, styles, TextContainer } from "./styles";
 
 import Petisco from "../../assets/images/petiscos.png";
+
+import AddButton from "../AddButton";
+import { Container, styles, TextContainer } from "./styles";
 
 export default function CarouselItem() {
   return (
@@ -15,6 +17,8 @@ export default function CarouselItem() {
         <Text style={styles.price}>R$ 5,21</Text>
         <Text style={styles.description}>Petisco Pedigree</Text>
       </TextContainer>
+
+      <AddButton />
     </Container>
   );
 }

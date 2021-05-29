@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.View`
   width: 150px;
   margin: 2px;
   padding-horizontal: 5px;
@@ -12,6 +12,7 @@ export const Container = styled.TouchableOpacity`
 export const TextContainer = styled.View`
   width: 100%;
   margin-top: 30px;
+  margin-bottom: 20px;
 `;
 
 export const styles = StyleSheet.create({
