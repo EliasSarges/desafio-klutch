@@ -6,9 +6,9 @@ import Minus from "../../assets/icons/minus.svg";
 
 import { Container, ButtonContainer } from "./styles";
 
-export default function AddButton({ status = false, quantity }) {
+export default function AddButton({ status = false, quantity, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       {status && (
         <ButtonContainer>
           <Minus width={"100%"} height={"100%"} />
