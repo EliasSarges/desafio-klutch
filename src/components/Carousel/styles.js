@@ -5,6 +5,8 @@ export const Container = styled.View`
   height: 400px;
   width: 100%;
   padding-horizontal: 15px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
 `;
 
 export const CarouselHeader = styled.View`

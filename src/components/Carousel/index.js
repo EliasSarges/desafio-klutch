@@ -14,11 +14,13 @@ import {
   CarouselBody,
 } from "./styles";
 
-export default function Carousel({ title }) {
+export default function Carousel({ title, local }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    api.get("products").then(({ data }) => setProducts(data));
+    api.get(local).then(({ data }) => {
+      setProducts(data);
+    });
   }, []);
 
   return (

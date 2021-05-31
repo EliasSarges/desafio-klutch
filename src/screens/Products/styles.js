@@ -6,4 +6,5 @@ export const Container = styled.View`
   flex-direction: column;
 
   align-items: center;
+  background-color: #f1f1f1;
 `;

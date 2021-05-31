@@ -64,6 +64,7 @@ export const TextContainer = styled.View`
   flex: 3;
   height: 100%;
   padding-top: 15px;
+  padding-left: 15px;
 `;
 
 export const styles = StyleSheet.create({

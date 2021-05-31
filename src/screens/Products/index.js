@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
+import { ScrollView } from "react-native";
+
 import { Container } from "./styles";
 
 import Header from "../../components/Header";
@@ -34,7 +36,13 @@ export default function Products() {
   return (
     <Container>
       <Header />
-      <Carousel title="Ofertas" />
+      <ScrollView
+        style={{ width: "100%" }}
+        contentContainerStyle={{ paddingBottom: "15%" }}
+      >
+        <Carousel title="Ofertas" local={"products"} />
+        <Carousel title="Promoções" local={"sale-off"} />
+      </ScrollView>
 
       {status && <Basket price={price} />}
 

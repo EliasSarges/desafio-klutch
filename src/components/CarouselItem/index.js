@@ -1,7 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, Image, Text } from "react-native";
-
-// import Petisco from "../../assets/images/petiscos.png";
+import { View, Image, Text } from "react-native";
 
 import AddButton from "../AddButton";
 import { Container, styles, TextContainer } from "./styles";

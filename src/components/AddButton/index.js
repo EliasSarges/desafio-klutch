@@ -21,6 +21,16 @@ export default function AddButton({ id, price, image, description, ...rest }) {
     }
   }, [basketProducts]);
 
+  useEffect(() => {
+    let aux = 0;
+    basketProducts.forEach((element) => {
+      if (element.id == id) {
+        aux += 1;
+      }
+      setQuantity(aux);
+    });
+  }, [basketProducts]);
+
   const addProduct = () => {
     const data = { id, price, image, description };
 
