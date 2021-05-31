@@ -6,7 +6,7 @@ import { View, TouchableOpacity, Image, Text } from "react-native";
 import AddButton from "../AddButton";
 import { Container, styles, TextContainer } from "./styles";
 
-export default function CarouselItem({ price, description, image }) {
+export default function CarouselItem({ id, price, description, image }) {
   return (
     <Container>
       <View style={styles.imageContainer}>
@@ -21,7 +21,13 @@ export default function CarouselItem({ price, description, image }) {
         <Text style={styles.description}>{description}</Text>
       </TextContainer>
 
-      <AddButton />
+      <AddButton
+        key={id}
+        id={id}
+        price={price}
+        description={description}
+        image={image}
+      />
     </Container>
   );
 }

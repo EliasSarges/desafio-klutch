@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { View, Text } from "react-native";
+
+import ShoppingBasketContext from "../../contexts/ShoppingBasketContext";
+import StatusContext from "../../contexts/StatusContext";
 
 import { Container, styles, TextContainer } from "./styles";
 
-export default function OpenBasketButton({ quantity, title, price, ...rest }) {
+export default function OpenBasketButton({ title, price, quantity, ...rest }) {
+  const { basketProducts } = useContext(ShoppingBasketContext);
+  const { status } = useContext(StatusContext);
+
   return (
     <Container {...rest}>
-      {quantity && (
+      {!status && (
         <TextContainer>
           <View style={styles.quantity}>
-            <Text style={{ color: "#ffffff" }}>{quantity}</Text>
+            <Text style={{ color: "#ffffff" }}>{quantity ? quantity : 0}</Text>
           </View>
         </TextContainer>
       )}
@@ -27,7 +33,7 @@ export default function OpenBasketButton({ quantity, title, price, ...rest }) {
         </TextContainer>
       )}
 
-      {price && (
+      {!status ? (
         <TextContainer>
           <Text
             style={{
@@ -35,10 +41,10 @@ export default function OpenBasketButton({ quantity, title, price, ...rest }) {
               textAlign: "right",
             }}
           >
-            {price}
+            R$ {price ? price : 0}
           </Text>
         </TextContainer>
-      )}
+      ) : null}
     </Container>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import ArrowRight from "../../assets/icons/arrow-right.svg";
@@ -20,6 +20,7 @@ export default function Carousel({ title }) {
   useEffect(() => {
     api.get("products").then(({ data }) => setProducts(data));
   }, []);
+
   return (
     <Container>
       <CarouselHeader>
@@ -37,6 +38,7 @@ export default function Carousel({ title }) {
             return (
               <CarouselItem
                 key={id}
+                id={id}
                 price={price}
                 description={description}
                 image={image}
