@@ -9,7 +9,6 @@ import OpenBasketButton from "../../components/OpenBasketButton";
 import StatusContext from "../../contexts/StatusContext";
 
 export default function Products() {
-  const [products, setProducts] = useState();
   const { status, setStatus } = useContext(StatusContext);
 
   return (

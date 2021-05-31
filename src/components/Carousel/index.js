@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
+
+import ArrowRight from "../../assets/icons/arrow-right.svg";
+import CarouselItem from "../CarouselItem";
+
+import api from "../../services/api";
 
 import {
   Container,
@@ -9,10 +14,12 @@ import {
   CarouselBody,
 } from "./styles";
 
-import ArrowRight from "../../assets/icons/arrow-right.svg";
-import CarouselItem from "../CarouselItem";
-
 export default function Carousel({ title }) {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    api.get("products").then(({ data }) => setProducts(data));
+  }, []);
   return (
     <Container>
       <CarouselHeader>
@@ -25,12 +32,17 @@ export default function Carousel({ title }) {
       </CarouselHeader>
 
       <CarouselBody horizontal>
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
+        {products &&
+          products.map(({ id, price, description, image }) => {
+            return (
+              <CarouselItem
+                key={id}
+                price={price}
+                description={description}
+                image={image}
+              />
+            );
+          })}
       </CarouselBody>
     </Container>
   );
