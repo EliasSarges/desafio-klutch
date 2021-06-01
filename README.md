@@ -1,3 +1,5 @@
+### Link para a [Documentação](https://www.notion.so/Documenta-o-do-Desafio-Klutch-287662cc343e4ba5864ed6915352339d)
+
 # Getting Started
 
 Aplicativo desenvolvido como desafio para a vaga na klutch, utilizando expo 
