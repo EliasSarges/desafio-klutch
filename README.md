@@ -1,6 +1,6 @@
-# Aplicativo desenvolvido como desafio para a vaga na klutch, utilizando expo 
-### Link para a [Documentação](https://www.notion.so/Documenta-o-do-Desafio-Klutch-287662cc343e4ba5864ed6915352339d)
-
+## Aplicativo desenvolvido como desafio para a vaga na klutch, utilizando expo 
+   Link para a [Documentação](https://www.notion.so/Documenta-o-do-Desafio-Klutch-287662cc343e4ba5864ed6915352339d) </br>
+   link para o repositorio da api do backend: [ecommerce-api](https://github.com/EliasSarges/ecommerce-api)
 ## dependencias necessarias
 expo-cli
 ### npm install -g expo-cli ou yarn global add expo-cli 
@@ -25,4 +25,6 @@ para compilar o projeto e gerar o apk para IOS
 
 ele solicitará a criação de uma nova conta se você não tiver uma conta expo  **expo build:status** para saber o status do seu aplicativo e o aplicativo na fila pode levar cerca de 30 minutos para gerar o arquivo apk.
 
-### será gerado um link onde você pode baixar o apk ou ipa.
+ **será gerado um link onde você pode baixar o apk ou ipa.**
+ 
+
