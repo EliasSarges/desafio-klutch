@@ -27,7 +27,7 @@ export const CarouselBody = styled.ScrollView`
 
 export const Title = styled.Text`
   color: #4b4f52;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
 `;
 

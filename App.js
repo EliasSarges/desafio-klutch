@@ -9,7 +9,9 @@ export default function App() {
   const [basketProducts, setBasketProducts] = useState([]);
 
   return (
+    // context responsavel pela abertura e fechamento da cesta
     <StatusContext.Provider value={{ status, setStatus }}>
+      {/* context responsavel pela lista de itens na cesta */}
       <ShoppingBasketContext.Provider
         value={{ basketProducts, setBasketProducts }}
       >

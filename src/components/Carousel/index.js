@@ -17,6 +17,7 @@ import {
 export default function Carousel({ title, local }) {
   const [products, setProducts] = useState([]);
 
+  // faz a requisição dos itens no backend
   useEffect(() => {
     api.get(local).then(({ data }) => {
       setProducts(data);

@@ -15,12 +15,14 @@ export default function AddButton({ id, price, image, description, ...rest }) {
     ShoppingBasketContext
   );
 
+  // define a quantidade individual dos itens para 0 caso nao exista item na cesta
   useEffect(() => {
     if (basketProducts.length === 0) {
       setQuantity(0);
     }
   }, [basketProducts]);
 
+  //define a quantidade individual dos itens de acordo com os itens na cesta
   useEffect(() => {
     let aux = 0;
     basketProducts.forEach((element) => {
@@ -31,15 +33,15 @@ export default function AddButton({ id, price, image, description, ...rest }) {
     });
   }, [basketProducts]);
 
+  // adiciona o produto na cesta
   const addProduct = () => {
     const data = { id, price, image, description };
 
-    setQuantity(quantity + 1);
     setBasketProducts([...basketProducts, data]);
   };
 
+  // remove o produto na cesta
   const removeProduct = (id) => {
-    setQuantity(quantity - 1);
     let active = true;
 
     let products = [...basketProducts];

@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 
-import Petisco from "../../assets/images/petiscos.png";
-
 import OpenBasketButton from "../OpenBasketButton";
 import AddButton from "../AddButton";
 
@@ -26,6 +24,7 @@ export default function Basket({ price }) {
   );
   const [products, setProducts] = useState([]);
 
+  // cria um estado novo sem valores repetidos a partir dos itens da cesta
   useEffect(() => {
     let aux = Array.from(new Set(basketProducts.map((value) => value.id))).map(
       (id) => {
@@ -50,6 +49,7 @@ export default function Basket({ price }) {
               alignItems: "center",
             }}
           >
+            {/* lista os produtos na cesta de acordo com o novo estado */}
             {products &&
               products.map((product) => {
                 return (
@@ -71,16 +71,18 @@ export default function Basket({ price }) {
                     </TextContainer>
 
                     <AddButton
+                      id={product.id}
                       price={product.price}
                       description={product.description}
                       image={product.image}
-                      id={product.id}
                       status={true}
                       style={{ flex: 1.5 }}
                     />
                   </Item>
                 );
               })}
+
+            {/* botao para esvaziar a cesta */}
             {products.length !== 0 ? (
               <TouchableOpacity
                 onPress={() => {
@@ -97,6 +99,7 @@ export default function Basket({ price }) {
         </BasketItems>
       </BasketContent>
 
+      {/* botao para fechar o carrinho */}
       <TouchableOpacity
         style={styles.closeButton}
         onPress={() => setStatus(!status)}
