@@ -1,8 +1,13 @@
+# Aplicativo desenvolvido como desafio para a vaga na klutch, utilizando expo 
 ### Link para a [Documentação](https://www.notion.so/Documenta-o-do-Desafio-Klutch-287662cc343e4ba5864ed6915352339d)
 
-# Getting Started
+## dependencias necessarias
+expo-cli
+### npm install -g expo-cli ou yarn global add expo-cli 
 
-Aplicativo desenvolvido como desafio para a vaga na klutch, utilizando expo 
+para rodar a aplicação em modo de desenvolvimento, pode ser usado o dispositivo fisico ou virtual, instalando o aplicativo do expo
+
+# Getting Started
 
 ## Available Scripts  
 ### yarn install ou npm install
