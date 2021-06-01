@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { View, Image, Text, TouchableOpacity, Animated } from "react-native";
 
 import OpenBasketButton from "../OpenBasketButton";
 import AddButton from "../AddButton";
@@ -23,8 +23,17 @@ export default function Basket({ price }) {
     ShoppingBasketContext
   );
   const [products, setProducts] = useState([]);
+  const [slideAnim] = useState(new Animated.Value(300));
 
   // cria um estado novo sem valores repetidos a partir dos itens da cesta
+  useEffect(() => {
+    Animated.timing(slideAnim, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+
   useEffect(() => {
     let aux = Array.from(new Set(basketProducts.map((value) => value.id))).map(
       (id) => {
@@ -36,12 +45,24 @@ export default function Basket({ price }) {
 
   return (
     <Container>
-      <BasketContent>
+      <Animated.View
+        style={{
+          width: "100%",
+          height: "82%",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          bottom: 0,
+          borderTopLeftRadius: 25,
+          borderTopRightRadius: 25,
+          backgroundColor: "white",
+          transform: [{ translateY: slideAnim }],
+        }}
+      >
         <BasketHeader>
           <Text style={{ color: "#BBBBBB", marginTop: 10 }}>SUBTOTAL</Text>
           <Text style={styles.price}>R$ {price}</Text>
         </BasketHeader>
-
         <BasketItems contentContainerStyle={{ paddingBottom: "30%" }}>
           <View
             style={{
@@ -97,7 +118,7 @@ export default function Basket({ price }) {
             )}
           </View>
         </BasketItems>
-      </BasketContent>
+      </Animated.View>
 
       {/* botao para fechar o carrinho */}
       <TouchableOpacity
@@ -107,7 +128,12 @@ export default function Basket({ price }) {
         <Text style={{ color: "#ffffff", fontSize: 25 }}>X</Text>
       </TouchableOpacity>
 
-      <OpenBasketButton title="Continuar" onPress={() => setStatus(!status)} />
+      <OpenBasketButton
+        title="Continuar"
+        onPress={() => {
+          setStatus(!status);
+        }}
+      />
     </Container>
   );
 }
