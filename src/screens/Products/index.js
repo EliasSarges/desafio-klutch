@@ -8,6 +8,7 @@ import Basket from "../../components/Basket";
 import OpenBasketButton from "../../components/OpenBasketButton";
 import StatusContext from "../../contexts/StatusContext";
 import ShoppingBasketContext from "../../contexts/ShoppingBasketContext";
+import SearchContext from "../../contexts/SearchContext";
 
 import { Container } from "./styles";
 
@@ -18,6 +19,8 @@ export default function Products() {
   const { basketProducts, setBasketProducts } = useContext(
     ShoppingBasketContext
   );
+
+  const { search } = useContext(SearchContext);
 
   // calcula o preço total dos produtos sempre que algum item for adicionado ou removido
   useEffect(() => {
@@ -37,13 +40,16 @@ export default function Products() {
   return (
     <Container>
       <Header />
-      <ScrollView
-        style={{ width: "100%" }}
-        contentContainerStyle={{ paddingBottom: "15%" }}
-      >
-        <Carousel title="Ofertas" local={"products"} />
-        <Carousel title="Produtos mais vendidos" local={"sale-off"} />
-      </ScrollView>
+      {/* nao sera exibido quando existir texto na barra de busca */}
+      {!search ? (
+        <ScrollView
+          style={{ width: "100%" }}
+          contentContainerStyle={{ paddingBottom: "15%" }}
+        >
+          <Carousel title="Ofertas" local={"products"} />
+          <Carousel title="Produtos mais vendidos" local={"sale-off"} />
+        </ScrollView>
+      ) : null}
 
       {status && <Basket price={price} />}
 
@@ -55,6 +61,9 @@ export default function Products() {
           onPress={() => setStatus(!status)}
         />
       )}
+
+      {/* sera exibido quando existir texto na barra de busca */}
+      {search ? <Carousel title="resultados" /> : null}
     </Container>
   );
 }

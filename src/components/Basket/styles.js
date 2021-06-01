@@ -12,6 +12,7 @@ export const Container = styled.View`
   background-color: rgba(0, 0, 0, 0.4);
 
   bottom: 0;
+  z-index: 2;
 `;
 
 export const BasketContent = styled.View`
